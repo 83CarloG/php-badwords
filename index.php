@@ -5,6 +5,11 @@ Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la ba
 
 
 <?php
+// Php conf error
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+// Input
 $title = 'vaffanculo';
 $author = 'Masini Marco';
 $text = 'Se mi guardo nello specchio
@@ -39,11 +44,13 @@ Non importa se ho pianto e sofferto
 Questa vita fa tutto da sé
 Nella musica ho solo scoperto
 Il bisogno…';
+// Control
 $badword = isset($_GET["badword"]) ? $_GET["badword"] : 'da inserire';
+// Output
 $newtitle = str_replace($badword, '***', $title);
 $newText = str_replace($badword, '***', $text);
 $length = strlen($text);
- ?>
+?>
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -65,3 +72,5 @@ $length = strlen($text);
 		</div>
  	</body>
  </html>
+
+ docker pull ubuntu
